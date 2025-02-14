@@ -2,7 +2,7 @@ name: Schedule Google Calendar Event
 
 on:
   schedule:
-    - cron: "0 9 * * *" # Runs every day at 9 AM UTC (adjust as needed)
+    - cron: "0 19 * * *" # Runs every day at 9 AM UTC (adjust as needed)
   workflow_dispatch: # Allows manual trigger
 
 jobs:
