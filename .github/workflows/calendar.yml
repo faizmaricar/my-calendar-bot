@@ -17,16 +17,12 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "20"
-          cache: "pnpm"
-
-      - name: Install pnpm
-        run: corepack enable && corepack prepare pnpm@latest --activate
 
       - name: Install dependencies
-        run: pnpm install
+        run: npm install
 
       - name: Run Google Calendar Script
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           CALENDAR_ID: ${{ secrets.CALENDAR_ID }}
-        run: pnpm exec node src/index.js
+        run: node index.js
