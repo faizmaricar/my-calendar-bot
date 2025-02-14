@@ -2,7 +2,7 @@ const { google } = require("googleapis");
 
 function addEventToGoogleCalendar(event) {
   const auth = new google.auth.GoogleAuth({
-    keyFile: JSON.parse(process.env.GOOGLE_CREDENTIALS),
+    keyFile: process.env.GOOGLE_CREDENTIALS,
     scopes: ["https://www.googleapis.com/auth/calendar"],
   });
 
