@@ -1,5 +1,6 @@
 require("dotenv").config();
 
+const addEventToGoogleCalendar = require("./addEventToGoogleCalendar");
 const createEvent = require("./createEvent");
 const getPrayerTimes = require("./getPrayerTimes");
 
