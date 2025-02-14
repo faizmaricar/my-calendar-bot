@@ -1,4 +1,4 @@
-const { parse, formatRFC3339, addMinutes } = require("date-fns");
+const { parse, formatRFC3339, addMinutes, addHours } = require("date-fns");
 
 function getStartAndEndTime(prayer, prayerDate, time) {
   const period = prayer === "Subuh" ? "AM" : "PM";
@@ -7,7 +7,9 @@ function getStartAndEndTime(prayer, prayerDate, time) {
 
   const datetimestring = `${prayerDate} ${time} ${period}`;
 
-  const startTime = formatRFC3339(parse(datetimestring, dateFormat, date));
+  const startTime = formatRFC3339(
+    addHours(parse(datetimestring, dateFormat, date), -8)
+  );
   const endTime = formatRFC3339(addMinutes(startTime, 5));
 
   return [startTime, endTime];
