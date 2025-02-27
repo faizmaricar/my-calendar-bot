@@ -1,10 +1,10 @@
 const axios = require("axios").default;
 
-async function getPrayerTimes(v) {
+async function getPrayerTimes(today) {
   var options = {
     method: "GET",
-    url: "https://www.muis.gov.sg/api/pagecontentapi/GetPrayerTime",
-    params: { v },
+    url: "https://isomer-user-content.by.gov.sg/muis_prayers_timetable_2025.json",
+    params: {},
     headers: {
       Accept: "*/*",
       "User-Agent": "Thunder Client (https://www.thunderclient.com)",
@@ -14,7 +14,7 @@ async function getPrayerTimes(v) {
   return axios
     .request(options)
     .then(function (response) {
-      return response.data;
+      return response.data[today];
     })
     .catch(function (error) {
       console.error(error);

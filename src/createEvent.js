@@ -2,7 +2,7 @@ const getStartAndEndTime = require("./getStartAndEndTime");
 
 function createEvent(summary, date, time) {
   const timeZone = "Asia/Singapore";
-  const [startTime, endTime] = getStartAndEndTime(summary, date, time);
+  const [startTime, endTime] = getStartAndEndTime(date, time);
 
   return {
     summary,
