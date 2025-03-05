@@ -5,8 +5,8 @@ function getStartAndEndTime(prayerDate, time) {
   const date = new Date();
   const datetimestring = `${prayerDate} ${time}`;
 
-  const startTime = formatRFC3339(parse(datetimestring, dateFormat, date));
-  const endTime = formatRFC3339(addMinutes(startTime, 5));
+  const startTime = parse(datetimestring, dateFormat, date);
+  const endTime = addMinutes(startTime, 5);
 
   return [startTime, endTime];
 }
