@@ -3,7 +3,7 @@ const axios = require("axios").default;
 async function getPrayerTimes(today) {
   var options = {
     method: "GET",
-    url: "https://isomer-user-content.by.gov.sg/muis_prayers_timetable_2025.json",
+    url: "https://isomer-user-content.by.gov.sg/muis_prayers_timetable.json",
     params: {},
     headers: {
       Accept: "*/*",
